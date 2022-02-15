@@ -5,9 +5,7 @@
 What is your issue of interest (provide sufficient background information)?
 
 
-* This project can be used to explore, analyze, and mitigate risk from various perspectives for an Organization. It provides risk analysis on a real-time basis to detect potential hazards and to act faster, thus mitigating the risk. Using inputs like twitter tweets about the Organization,the CEO or the products they offer. I will design an end to end system which updates on daily basis showing top risks on a given day, its impact on stock market and website traffic. The system would segrigate these risks by considering all the factors into different priority levels and provide results in a user dashboard. Also, these risks would be stored on a daily basis for furthur analysis to find frequently occuring problems in the system.These issues can be for example User interface related issues, issues related to a perticular product or an individual and so..on. 
-
-
+* This project can be used to explore, analyze, and mitigate risk from various perspectives for an Organization. It is a product to which a stock symbol can be given as input and it returns an interactive UI showing the risks related to that company on a daily, weekly or monthly basis. It provides risk analysis on a real-time basis to detect potential hazards and to act faster, thus mitigating the risk. I will design an end to end system which updates based on user showing top risks on a given day, week or month, its impact on stock market and website traffic. The system would also segrigate these risks by considering all the factors into different priority levels. Also, these risks would be stored on a daily basis for furthur analysis and find frequently occuring problems in the system.
 
 <img width="585" alt="Screen Shot 2022-02-07 at 4 11 56 PM" src="https://user-images.githubusercontent.com/98825247/152872680-3414a92c-6f7c-4115-a60d-b732e8489e24.png">
 
@@ -16,16 +14,16 @@ What is your issue of interest (provide sufficient background information)?
 
 Why is this issue important to you and/or to others?
 
-* This kind of a technique is important for any Organization which has a social media presence (which i assume most companies have) to understand problems faced by their end users. 
+* Risk management is an important procedure because it provides a company with the tools it needs to properly identify and manage potential hazards. Furthermore, management will have the essential knowledge to make informed decisions and ensure that the company remains profitable and understands problems faced by their end users.
 
 What questions do you have in mind and would like to answer?
 
-* I would like to look at the impact of my idea when used in real-time. Its important for me to understand about what level can the risks be mitigated using a system like this. I would also like to look at the impact of social media platform like twitter on an organization and how important is it to analyse tweets in risk management and mitigation.
+* I would like to look at the impact of my idea when used in real-time. Its important for me to understand about what level can the risks be mitigated using a system like this. I would also like to look at the impact of social media platform like twitter, financial news on finance and users and how important is it to analyse these in risk management and mitigation.
 
 
 Where do you get the data to analyze and help answer your questions (creditability of source, quality of data, size of data, attributes of data. etc.)?
 
-* The data used for this project is fetched on daily basis from Twitter Api (Twitter tweets), SimilarWeb Api(website traffic information) ,Yahoo finance Api (financial information). These are Api's which are legally allowed to scrape data from websites. 
+* The twitter tweets data used for this project is fetched from Twitter Api, SimilarWeb Api for website traffic information ,Yahoo finance Api to scrape financial news and stock information. These are Api's which are legally allowed to scrape data from websites. 
 
 
 What will be your unit of analysis (for example, patient, organization, or country)? Roughly how many units (observations) do you expect to analyze?
