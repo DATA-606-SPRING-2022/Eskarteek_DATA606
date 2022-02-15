@@ -7,9 +7,7 @@ What is your issue of interest (provide sufficient background information)?
 
 * This project can be used to explore, analyze, and mitigate risk from various perspectives for an Organization. It is a product to which a stock symbol can be given as input and it returns an interactive UI showing the risks related to that company on a daily, weekly or monthly basis. It provides risk analysis on a real-time basis to detect potential hazards and to act faster, thus mitigating the risk. I will design an end to end system which updates based on user showing top risks on a given day, week or month, its impact on stock market and website traffic. The system would also segrigate these risks by considering all the factors into different priority levels. Also, these risks would be stored on a daily basis for furthur analysis and find frequently occuring problems in the system.
 
-
-\n
-
+#
 
 
 
