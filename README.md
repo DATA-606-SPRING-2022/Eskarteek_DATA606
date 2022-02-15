@@ -25,12 +25,12 @@ Why is this issue important to you and/or to others?
 
 What questions do you have in mind and would like to answer?
 
-* I would like to look at the impact of my idea when used in real-time. Its important for me to understand about what level can the risks be mitigated using a product like this. I would also like to look at the impact of social media platform like twitter, financial news, website traffic and and users and how important is it to analyse these in risk management and mitigation.
+* I would like to look at the impact of this product when used in real-time. Its important for me to understand about what level can the risks be mitigated using a product like this. I would also like to look at the impact of social media platform like twitter, financial news, website traffic and stock market to understand how important it is to analyse these in risk management and mitigation.
 
 
 Where do you get the data to analyze and help answer your questions (creditability of source, quality of data, size of data, attributes of data. etc.)?
 
-* The twitter tweets data used for this project is fetched from Twitter Api, SimilarWeb Api for website traffic information ,Yahoo finance Api to scrape financial news and stock information. These are Api's which are legally allowed to scrape data from websites. 
+* The twitter tweets data used for this project is fetched from Twitter Api, website traffic information using SimilarWeb Api and Yahoo finance Api to scrape financial news and stock information. These are Api's which are legally allowed to scrape data from websites. 
 
 
 What will be your unit of analysis (for example, patient, organization, or country)? Roughly how many units (observations) do you expect to analyze?
