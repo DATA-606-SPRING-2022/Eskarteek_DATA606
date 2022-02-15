@@ -21,11 +21,11 @@ What is your issue of interest (provide sufficient background information)?
 
 Why is this issue important to you and/or to others?
 
-* Risk management is an important procedure because it provides a company with the tools it needs to properly identify and manage potential hazards. Furthermore, management will have the essential knowledge to make informed decisions and ensure that the company remains profitable and understands problems faced by their end users.
+* Risk management is an important procedure because it provides a company with the tools it needs to properly identify and manage potential hazards. Furthermore, management will have the essential knowledge to make informed decisions and ensure that the company remains profitable and understands problems faced by their employees and users.
 
 What questions do you have in mind and would like to answer?
 
-* I would like to look at the impact of my idea when used in real-time. Its important for me to understand about what level can the risks be mitigated using a system like this. I would also like to look at the impact of social media platform like twitter, financial news on finance and users and how important is it to analyse these in risk management and mitigation.
+* I would like to look at the impact of my idea when used in real-time. Its important for me to understand about what level can the risks be mitigated using a product like this. I would also like to look at the impact of social media platform like twitter, financial news, website traffic and and users and how important is it to analyse these in risk management and mitigation.
 
 
 Where do you get the data to analyze and help answer your questions (creditability of source, quality of data, size of data, attributes of data. etc.)?
@@ -44,11 +44,11 @@ What variables/measures do you plan to use in your analysis (variables should be
 
 What kinds of techniques/models do you plan to use (for example, clustering, NLP, ARIMA, etc.)?
 
-* NLP (Sentiment analysis)
+* VADER Sentiment analyzer, VADER ( Valence Aware Dictionary for Sentiment Reasoning) is a model used for text sentiment analysis that is sensitive to both polarity (positive/negative) and intensity (strength) of emotion and embedding text using Gensim Word2Vec these are a modern approach for representing text in natural language processing. TF-IDF Term frequency (TF) is how often a word appears in a document, divided by how many words there are and, inverse document frequency (IDF) is how unique or rare a word is.
 
 How do you plan to develop/apply ML and how you evaluate/compare the performance of the models?
 
-* I would like to use VADAR sentiment analyser to analyse sentiment in the data. User Keyword extraction techniques like TF-IDF on negetive tweets to find out the most important issues to be solved on a given day. 
+* I would like to use VADAR sentiment analyser to analyse sentiment polarity in the data. Extracting Keywords using TF-IDF on negetive tweets.Performing exploratory data analysis and dasboard them with priority levels to find out the most important issues to be solved on a given day, week or month.  
 
 What outcomes do you intend to achieve (better understanding of problems, tools to help solve problems, predictive analytics with practicle applications, etc)?
 
