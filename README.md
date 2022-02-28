@@ -1,6 +1,7 @@
 # DATA606 Capstone Project
 
-##                           Risk Management for any Organization using data analytics and Sentiment analysis 
+##                           Risk Management using data analytics and Natural Language processing
+
 
 What is your issue of interest (provide sufficient background information)?
 
