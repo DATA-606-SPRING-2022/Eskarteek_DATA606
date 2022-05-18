@@ -158,11 +158,7 @@ drop those words. In addition, text data may contain numbers, more white spaces,
 punctuation characters, stop words etc. We also need to clean data by removing all those words.
 For this purpose, we created own stop-word list which specifically contains stopwords related to
 finance world and also general English stop words. This stop words list contains general words 
-including Generic, names, Date and numbers,
-
-#### Geographic, Currencies.
-
-Also, to ignore words that appear in only one or two documents, we are considering minimum
+including Generic, names, Date and numbers, Also, to ignore words that appear in only one or two documents, we are considering minimum
 document frequency which considers words that appear in minimum three documents.
 Stemming is also important to reduce redundancy in words. Using stemming process, all the
 words are replaced by its original version of word. For example, the words ‘developed’,
@@ -208,39 +204,35 @@ accuracy, precision, recall and other model evaluation methods. All three classi
 algorithms are implemented and tested with new data.
 
 
-3 .1.5. Resgression Learning
+3 .1.6. Resgression Learning
 As most of the research shows that Decision Tree, Random Forest and K Nearest Neighbours classification
 algorithms performs good in text classification. So, we are considering all three algorithms to
 classify the text and check each algorithm’s accuracy. We can compare all the results such as
 accuracy, precision, recall and other model evaluation methods. All three classification
 algorithms are implemented and tested with new data.
 
-3 .1.6. System Evaluation
+3 .1.7. System Evaluation
 We divided the data into train and test set. Also, we created unknown data set for classifier and Regressor
 to check accuracy against new data. We evaluated all the models performance by
 checking each one’s accuracy, precision, recall, ROC curve area. The results of which are provided in the 
 presentation.
 
-3 .1.7. Testing with new Dat
+3 .1.8. Testing with new Data and Building Web Application
 
 News articles from Jan 2021 to April 2022 are used as unknown test set. When comparing
 results of all models, KNN classifier and Random Forest Regressor performs well for unknown data.
-Other algorithms also worked good but these performed the best.
+Other algorithms also worked good but these performed the best. We used Dash to build a interactive
+Web App for users. 
 
-#### 3 .1.8. Plotting the values
-
-After models with unknown data, we plotted the sentiment score pie chart, Future Trend, and predicted close price
-and comparision with historical price chart.
-
-## 4. EVALUATION
+## 5. CONCLUSION
 
 We tested the models using different testing options so that we can compare each method
 against different scenarios. Following are the test options on which we tested our models.
- 5 - fold cross validation
- 10 - fold cross validation
- 15 - fold cross validation
- 70% Data split
- 80% Data split
+- 5 - fold cross validation
+- 10 - fold cross validation
+- 15 - fold cross validation
+- 70% Data split
+- 80% Data split
 ```
 ## 5. CONCLUSION
 
