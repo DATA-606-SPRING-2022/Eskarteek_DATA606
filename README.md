@@ -110,28 +110,25 @@ Document
 Representation
 ```
 ```
-Classifier Learning
+Classification and Regression Analysis
 (Build the model)
 ```
 ```
-System Evaluation
+Time Series Forecast
 ```
 ```
-Test the model
-with new data
+Model testing and fine tuning
 ```
 ```
-Plot time series of
-past Adj_close price
+Plot time series and
+predict close price
 ```
 ```
 Plot Scoring of news
 sentiment
 ```
 ```
-Observe the relationship
-between news sentiment
-score and stock price
+Building WebApp and deploying
 ```
 Figure 1: System Design
 This design can logically be seen as three phases with first column of blocks in phase 1, second
