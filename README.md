@@ -1,6 +1,6 @@
 # DATA606 Capstone Project
 
-##                           Risk Management using data analytics and Natural Language processing
+##                                       Portfolio Risk Management and Mitigation
 
 
 What is your issue of interest (provide sufficient background information)?
