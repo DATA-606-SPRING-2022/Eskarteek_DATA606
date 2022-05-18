@@ -224,7 +224,7 @@ results of all models, KNN classifier and Random Forest Regressor performs well 
 Other algorithms also worked good but these performed the best. We used Dash to build a interactive
 Web App for users. 
 
-## 5. CONCLUSION
+## 4. Model Evaluation
 
 We tested the models using different testing options so that we can compare each method
 against different scenarios. Following are the test options on which we tested our models.
