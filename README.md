@@ -4,7 +4,7 @@
 
 # SENTIMENT ANALYSIS
 
-### Sai Karteek Edumudi^1 ,
+### Sai Karteek Edumudi,
 ### Prof. Dr Chaojie Wang 
 ### Department of Data Science, University of Maryland Baltimore County, MD 
 ### Email: df56654@umbc.edu
