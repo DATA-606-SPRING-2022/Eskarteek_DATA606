@@ -130,35 +130,35 @@ sentiment
 ```
 Building WebApp and deploying
 ```
-Figure 1: System Design
-This design can logically be seen as three phases with first column of blocks in phase 1, second
-column as phase 2 and third column contains blocks in phase 3. Result of phase 1 is news
+System Design
+This design can logically be seen as three phases. Result of phase 1 is news
 articles with its polarity score. This result is given as an input to the phase 2. In phase 2, text is
-converted in tf-idf vector space so that it can be given to the classifier. Then three different
-classifiers are programmed for the same data to compare results. At the end of phase 2, we
+converted in tf-idf vector space so that it can be given to the classifier and regressor. Then these
+models are programmed for the same data to compare results. At the end of phase 2, we
 evaluate the results given by all classifiers and also test for checking classifier performance for
 new news articles. In phase 3, we check for relationship between news articles and stock price
-data. We plot both the data using R language and record the results. In the following sections,
+data. We plot both the data using plotly plots and record the results. Later we use all this information to build
+a interactive Web Appllication using Dash. In the following sections,
 each block of the design is explained.
 
 3 .1.1. News Collection
-We collected Apple Inc. Company’s data for past three years, from 1 Feb 2013 to 2 April 2016.
-This data includes major key events news articles of the company and also daily stock prices of
-AAPL for the same time period. Daily stock prices contain six values as Open, High, Low,
+We collected 100 stocks data for past ten years. This data includes major key events news 
+articles of the company and also daily stock prices of company using yfinance API
+for the same time period. Daily stock prices contain six values as Open, High, Low,
 Close, Adjusted Close, and Volume. For integrity throughout the project, we considered
-Adjusted Close price as everyday stock price. We have collected this data from major news
-aggregators such as news.google.com, reauters.com, finance.yahoo.com.
+Close price as everyday stock price. We have collected this data from major news
+aggregators such as news.google.com, newspaper3k, finance.yahoo.com.
 
 
 3 .1.2. Pre Processing
 Text data is unstructured data. So, we cannot provide raw test data to classifier as an input.
 Firstly, we need to tokenize the document into words to operate on word level. Text data
-contains more noisy words which are not contributing towards classification. So, we need to
+contains more noisy words which are not contributing towards model building. So, we need to
 drop those words. In addition, text data may contain numbers, more white spaces, tabs,
 punctuation characters, stop words etc. We also need to clean data by removing all those words.
 For this purpose, we created own stop-word list which specifically contains stopwords related to
-finance world and also general English stop words. We built this using reference from [1 6 ]. This
-stop words list contains general words including Generic, names, Date and numbers,
+finance world and also general English stop words. This stop words list contains general words 
+including Generic, names, Date and numbers,
 
 #### Geographic, Currencies.
 
@@ -173,29 +173,21 @@ applying polarity detection algorithm.
 3 .1.3. Sentiment Detection Algorithm
 For automatic sentiment detection of news articles, we are following Dictionary based approach
 which uses Bag of Word technique for text mining. This method is based on the research of J.
-Bean in his implementation of Twitter sentiment analysis for airline companies [6]. To build the
-polarity dictionary, we need two types of words collection; i.e. positive words and negative
+Bean in his implementation of Twitter sentiment analysis for airline companies [6]. To detect the
+polarity we used  VADER Sentiment analyzer, VADER ( Valence Aware Dictionary for Sentiment Reasoning) 
+is a model used for text sentiment analysis that is sensitive to both polarity (positive/negative) 
+and intensity (strength) of emotion and embedding text using Gensim Word2Vec these are a modern approach 
+for representing text in natural language processing. TF-IDF Term frequency (TF) is how often a word 
+appears in a document, divided by how many words there are and, inverse document frequency (IDF) 
+is how unique or rare a word is., we need two types of words collection; i.e. positive words and negative
 words. Then we can match the article’s words against both these words list and count numbers
 of words appears in both the dictionaries and calculate the score of that document.
 We created the polarity words dictionary using general words with positive and negative
 polarity. Also addition to this, we used Finance specific words with its polarity using
-McDonald’s research [16]. In this dictionary, we collected 2360 positive words and 7383
-negative words.
-For the news article, we are considering the string which contains headline and news body, both.
-The algorithm to calculate sentiment score of a document is given below.
-Algorithm:
-
-1. Tokenize the document into word vector.
-2. Prepare the dictionary which contains words with its polarity (positive or negative)
+McDonald’s research [16]. 
 
 
-3. Check against each word weather it matches with one of the word from positive word
-dictionary or negative words dictionary.
-4. Count number of words belongs to positive and negative polarity.
-5. Calculate Score of document = count (pos.matches) – count (neg.matches)
-6. If the Score is 0 or more, we consider the document is positive or else, negative.
-
-Here, we are considering one assumption as if the score of the document is 0, then we label it as
+Here, we are considering one assumption as if the score of the document is 1, then we label it as
 positive as we are considering two class problem for this implementation. As a result, we get
 news collection with its sentiment score and polarity as positive or negative.
 
@@ -209,29 +201,36 @@ in the collection containing the given term/feature. This term weighting method 
 to filter out common terms by giving them a very low value.
 
 3 .1.5. Classifier Learning
-As most of the research shows that SVM, Random Forest and Naïve Bayes classification
+As most of the research shows that Decision Tree, Random Forest and K Nearest Neighbours classification
 algorithms performs good in text classification. So, we are considering all three algorithms to
 classify the text and check each algorithm’s accuracy. We can compare all the results such as
 accuracy, precision, recall and other model evaluation methods. All three classification
-algorithms are implemented and tested using Weka tool.
+algorithms are implemented and tested with new data.
+
+
+3 .1.5. Resgression Learning
+As most of the research shows that Decision Tree, Random Forest and K Nearest Neighbours classification
+algorithms performs good in text classification. So, we are considering all three algorithms to
+classify the text and check each algorithm’s accuracy. We can compare all the results such as
+accuracy, precision, recall and other model evaluation methods. All three classification
+algorithms are implemented and tested with new data.
 
 3 .1.6. System Evaluation
-We divided the data into train and test set. Also, we created unknown data set for classifier to
-check accuracy of classifier against new data. We evaluated all three classifiers performance by
-checking each one’s accuracy, precision, recall, ROC curve area. The results are as given in the
-next section.
+We divided the data into train and test set. Also, we created unknown data set for classifier and Regressor
+to check accuracy against new data. We evaluated all the models performance by
+checking each one’s accuracy, precision, recall, ROC curve area. The results of which are provided in the 
+presentation.
 
-3 .1.7. Testing with new Data
+3 .1.7. Testing with new Dat
 
-
-News articles from Jan 2016 to April 2016 are used as unknown test set. When comparing
-results of all classifiers, SVM classifier performs well for unknown data. Random Forest
-algorithm also worked good comparing to naive bayes algorithm.
+News articles from Jan 2021 to April 2022 are used as unknown test set. When comparing
+results of all models, KNN classifier and Random Forest Regressor performs well for unknown data.
+Other algorithms also worked good but these performed the best.
 
 #### 3 .1.8. Plotting the values
 
-After classification of unknown data, we plotted the news score chart and compared with
-historical price chart.
+After models with unknown data, we plotted the sentiment score pie chart, Future Trend, and predicted close price
+and comparision with historical price chart.
 
 ## 4. EVALUATION
 
@@ -242,41 +241,17 @@ against different scenarios. Following are the test options on which we tested o
  15 - fold cross validation
  70% Data split
  80% Data split
- New testing data
-
-```
-Figure 2: Comparison of three classifiers against different test options
-```
-
-```
-Figure 3: Result of testing models with new data
-```
-```
-Figure 4: Time series plot of news sentiment score vs. actual stock price for test dataset
 ```
 ## 5. CONCLUSION
 
 Finding future trend for a stock is a crucial task because stock trends depend on number of
-factors. We assumed that news articles and stock price are related to each other. And, news may
-have capacity to fluctuate stock trend. So, we thoroughly studied this relationship and concluded
-that stock trend can be predicted using news articles and previous price history.
-As news articles capture sentiment about the current market, we automate this sentiment
-detection and based on the words in the news articles, we can get an overall news polarity. If the
-
-
-news is positive, then we can state that this news impact is good in the market, so more chances
-of stock price go high. And if the news is negative, then it may impact the stock price to go
-down in trend.
-We used polarity detection algorithm for initially labelling news and making the train set. For
-this algorithm, dictionary based approach was used. The dictionaries for positive and negative
-words are created using general and finance specific sentiment carrying words. Then pre-
-processing of text data was also a challenging task. We created own dictionary for stop words
-removal which also includes finance specific stop words. Based on this data, we implemented
-three classification models and tested under different test scenarios. Then after comparing their
-results, Random Forest worked very well for all test cases ranging from 88% to 92% accuracy.
-Accuracy followed by SVM is also considerable around 86%. Naive Bayes algorithm
-performance is around 83%. Given any news article, it would be possible for the model to arrive
-on a polarity which would further predict the stock trend.
+factors. We assumed that news articles and stock price are related to each other and, news may have capacity to 
+fluctuate stock trend. So, we thoroughly studied this relationship and concluded that stock trend can be predicted 
+using news articles and previous price history. As news articles capture sentiment about the current market, 
+we automate this sentiment detection and based on the words in the news articles, we can get an overall news polarity.
+If the news is positive, then we can compare with the closing price to verify that the news impact is good in 
+the stock market, so more chances of stock price go high. And if the news is negative, then it may impact the 
+stock price to go down in trend. 
 
 ## FUTURE WORK
 
@@ -300,8 +275,6 @@ Energy Demand Forecasting, International Journal of Electronic Business Manageme
 5 (3): 211- 224
 [3] J. Bean, R by example: Mining Twitter for consumer attitudes towards airlines, In Boston
 Predictive Analytics Meetup Presentation, 2011
-
-
 [4] Yauheniya Shynkevich, T.M. McGinnity, Sonya Coleman, Ammar Belatreche, Predicting Stock
 Price Movements Based on Different Categories of News Articles, 2015 IEEE Symposium
 Series on Computational Intelligence
@@ -328,28 +301,6 @@ Technology, 2007
 [15] https://en.wikipedia.org/wiki/Support_vector_machine
 [16] [http://www3.nd.edu/~mcdonald/Word_Lists.html](http://www3.nd.edu/~mcdonald/Word_Lists.html)
 [17] https://jeffreybreen.wordpress.com/2011/07/04/twitter-text-mining-r-slides/
-
-Authors
-
-Kalyani Joshi
-Student of Master in Engineering in at K. J.
-Somaiya College of Engineering, Mumbai.
-Completed Bachelors in Engineering from Pune
-University, 2013.
-
-
-Prof. Bharathi H. N.
-Currently working as Head of Department of
-Computer Engineering at K. J. Somaiya
-College of Engineering, Mumbai.
-
-Prof. Jyothi M. Rao
-Currently working as Associate professor and
-Associate head of Computer Engineering
-Department at K. J. Somaiya College of
-Engineering, Mumbai.
-
-
 
 
 ##                                       Portfolio Risk Management and Mitigation
